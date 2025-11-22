@@ -5,20 +5,23 @@ const Process: React.FC = () => {
     {
       number: "1",
       colorClass: "bg-brand-primary",
-      title: "Audit & Strategy",
-      description: "We analyze your current ticket volume and common queries to design the perfect AI logic flow."
+      title: "CONNECT",
+      subtitle: "Send us your data",
+      description: "Simply provide your website URL or upload your training PDFs. We clean and structure your data for the AI."
     },
     {
       number: "2",
       colorClass: "bg-brand-accent",
-      title: "Training & Integration",
-      description: "We ingest your documentation into the LLM and connect the AI to your existing CRM tools."
+      title: "WE BUILD",
+      subtitle: "We configure the agent",
+      description: "We set up the logic, test the responses, and customize the tone to match your brand perfectly."
     },
     {
       number: "3",
       colorClass: "bg-brand-success",
-      title: "Launch & Optimize",
-      description: "We go live. The AI handles 80% of volume immediately. We refine based on edge cases."
+      title: "GO LIVE",
+      subtitle: "We launch it for you",
+      description: "We generate the smart code snippet. You can paste it yourself, or our team can log in and install it for you so you don't have to lift a finger."
     }
   ];
 
@@ -48,8 +51,9 @@ const Process: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-xl font-bold text-white">{step.title}</h4>
-                    <p className="text-gray-400 mt-1">{step.description}</p>
+                    <h4 className="text-sm font-bold text-brand-primary tracking-wider uppercase mb-1">{step.title}</h4>
+                    <h5 className="text-xl font-bold text-white mb-2">{step.subtitle}</h5>
+                    <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}
