@@ -46,18 +46,6 @@ const Contact: React.FC = () => {
             <p className="text-xl text-gray-400 mb-8">
               Book a demo to see how TicketZero can automate your workflow. We typically respond within 2 hours.
             </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary">
-                  <i className="fa-solid fa-envelope"></i>
-                </div>
-                <div>
-                  <h5 className="font-bold text-white">Email Us</h5>
-                  <p className="text-gray-400">webwonders247@gmail.com</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Booking Form */}
