@@ -1,6 +1,21 @@
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <footer className="bg-black border-t border-gray-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,31 +32,31 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-500 text-sm">
-              <li><a href="#" className="hover:text-brand-primary transition">AI Agents</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Ticket Automation</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Live Chat</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Integrations</a></li>
+              <li><a href="#services" onClick={(e) => handleScroll(e, 'services')} className="hover:text-brand-primary transition cursor-pointer">AI Agents</a></li>
+              <li><a href="#services" onClick={(e) => handleScroll(e, 'services')} className="hover:text-brand-primary transition cursor-pointer">Ticket Automation</a></li>
+              <li><a href="#services" onClick={(e) => handleScroll(e, 'services')} className="hover:text-brand-primary transition cursor-pointer">Live Chat</a></li>
+              <li><a href="#process" onClick={(e) => handleScroll(e, 'process')} className="hover:text-brand-primary transition cursor-pointer">Integrations</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-500 text-sm">
-              <li><a href="#" className="hover:text-brand-primary transition">About Us</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Case Studies</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Blog</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition">Privacy Policy</a></li>
+              <li><a href="#benefits" onClick={(e) => handleScroll(e, 'benefits')} className="hover:text-brand-primary transition cursor-pointer">About Us</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Case Studies</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Blog</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Privacy Policy</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
+              <a href="#" onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
                 <i className="fa-brands fa-twitter"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
+              <a href="#" onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
                 <i className="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
+              <a href="#" onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white transition">
                 <i className="fa-brands fa-github"></i>
               </a>
             </div>
