@@ -14,7 +14,7 @@ const WhyUs: React.FC = () => {
       colorClass: "text-purple-400",
       bgClass: "bg-purple-500/20",
       title: "100+ Languages",
-      description: "Break language barriers instantly. Our AI fluently supports customers in their native language natively."
+      description: "Break language barriers instantly. Our AI fluently supports customers in their native language."
     },
     {
       icon: "fa-solid fa-shield-halved",
