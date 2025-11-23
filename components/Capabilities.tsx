@@ -11,7 +11,7 @@ const Capabilities: React.FC = () => {
     },
     {
       title: "NEVER MISS A LEAD",
-      description: "The assistant politely asks for Name, Email, and Phone Number before booking an appointment, ensuring you get actionable data",
+      description: "The assistant politely asks for Name, Email, and Phone Number before booking an appointment, ensuring you get actionable data.",
       icon: "fa-solid fa-address-book",
       color: "text-purple-400",
       bg: "bg-purple-500/10"
