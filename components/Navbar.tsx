@@ -97,6 +97,7 @@ const Navbar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className={mobileNavLinkClass}>Services</a>
             <a href="#benefits" onClick={(e) => handleNavClick(e, 'benefits')} className={mobileNavLinkClass}>Why Us</a>
+            <a href="#process" onClick={(e) => handleNavClick(e, 'process')} className={mobileNavLinkClass}>Process</a>
             <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-brand-primary font-bold block px-3 py-2 rounded-md text-base cursor-pointer">Book Now</a>
           </div>
         </div>

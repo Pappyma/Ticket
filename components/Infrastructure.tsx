@@ -2,7 +2,7 @@ import React from 'react';
 
 const Infrastructure: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-dark relative overflow-hidden border-t border-gray-800">
+    <section id="infrastructure" className="py-24 bg-gradient-to-b from-brand-dark to-brand-card/20 relative overflow-hidden border-t border-gray-800">
         {/* Background glow effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 

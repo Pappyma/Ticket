@@ -33,7 +33,7 @@ const Capabilities: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-brand-dark border-t border-gray-800">
+    <section id="capabilities" className="py-24 relative overflow-hidden bg-brand-card/30 border-t border-gray-800">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[100px]"></div>
