@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
+    setErrorMessage(null);
     
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -24,12 +26,12 @@ const Contact: React.FC = () => {
         form.reset();
       } else {
         setFormStatus('idle');
-        alert("There was a problem submitting your form. Please try again.");
+        setErrorMessage("There was a problem submitting your form. Please try again.");
       }
     } catch (error) {
       console.error(error);
       setFormStatus('idle');
-      alert("There was a problem connecting to the server. Please check your internet connection.");
+      setErrorMessage("Network error. Please check your connection.");
     }
   };
 
@@ -95,6 +97,14 @@ const Contact: React.FC = () => {
                     placeholder="Tell us about your current support volume..."
                   ></textarea>
                 </div>
+                
+                {errorMessage && (
+                  <div className="mb-4 text-red-400 text-sm flex items-center gap-2">
+                    <i className="fa-solid fa-circle-exclamation"></i>
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button 
                   type="submit" 
                   disabled={formStatus === 'submitting'}
