@@ -1,19 +1,42 @@
 import React from 'react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (page: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // Logic to scroll to section on home page
+    // We assume App.tsx or Navbar logic handles the page switch if not on home, 
+    // but here we can just trigger navigation to home and then scroll
+    
+    // Check if we are already on the page? 
+    // Since Footer doesn't know currentPage easily without props prop drilling, 
+    // we can just call onNavigate('home') and rely on the user to click again 
+    // OR we trigger a home nav.
+    
+    onNavigate('home');
+    
+    // A slight delay to allow rendering if we were on another page
+    setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+    }, 100);
+  };
+
+  const handlePageNav = (e: React.MouseEvent<HTMLAnchorElement>, page: string) => {
+    e.preventDefault();
+    onNavigate(page);
   };
 
   return (
@@ -42,9 +65,9 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-500 text-sm">
               <li><a href="#benefits" onClick={(e) => handleScroll(e, 'benefits')} className="hover:text-brand-primary transition cursor-pointer">About Us</a></li>
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Case Studies</a></li>
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Blog</a></li>
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-brand-primary transition cursor-default opacity-70">Privacy Policy</a></li>
+              <li><a href="#" onClick={(e) => handlePageNav(e, 'case-studies')} className="hover:text-brand-primary transition cursor-pointer">Case Studies</a></li>
+              <li><a href="#" onClick={(e) => handlePageNav(e, 'blog')} className="hover:text-brand-primary transition cursor-pointer">Blog</a></li>
+              <li><a href="#" onClick={(e) => handlePageNav(e, 'privacy')} className="hover:text-brand-primary transition cursor-pointer">Privacy Policy</a></li>
             </ul>
           </div>
           <div>

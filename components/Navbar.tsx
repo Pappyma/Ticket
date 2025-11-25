@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavigate: (page: string) => void;
+  currentPage: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -22,22 +27,38 @@ const Navbar: React.FC = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (currentPage !== 'home') {
+      onNavigate('home');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+    
+    const scrollToTarget = () => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    };
+
+    if (currentPage !== 'home') {
+      onNavigate('home');
+      // Allow time for Home component to mount before scrolling
+      setTimeout(scrollToTarget, 100);
+    } else {
+      scrollToTarget();
     }
+    
     if (isMobileMenuOpen) setIsMobileMenuOpen(false);
   };
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -10,6 +10,9 @@ import Process from './components/Process';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CaseStudies from './components/CaseStudies';
+import Blog from './components/Blog';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 // Declaration for AOS global
 declare global {
@@ -19,6 +22,8 @@ declare global {
 }
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({
@@ -27,23 +32,38 @@ const App: React.FC = () => {
         offset: 50
       });
     }
-  }, []);
+  }, [currentPage]); // Re-init AOS on page change
+
+  const navigateTo = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen bg-brand-dark text-slate-200 font-sans">
-      <Navbar />
+      <Navbar onNavigate={navigateTo} currentPage={currentPage} />
+      
       <main>
-        <Hero />
-        <Stats />
-        <Services />
-        <Capabilities />
-        <WhyUs />
-        <Infrastructure />
-        <Process />
-        <Pricing />
-        <Contact />
+        {currentPage === 'home' && (
+          <>
+            <Hero />
+            <Stats />
+            <Services />
+            <Capabilities />
+            <WhyUs />
+            <Infrastructure />
+            <Process />
+            <Pricing />
+            <Contact />
+          </>
+        )}
+        
+        {currentPage === 'case-studies' && <CaseStudies />}
+        {currentPage === 'blog' && <Blog />}
+        {currentPage === 'privacy' && <PrivacyPolicy />}
       </main>
-      <Footer />
+
+      <Footer onNavigate={navigateTo} />
     </div>
   );
 };
