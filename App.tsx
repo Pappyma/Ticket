@@ -10,6 +10,7 @@ import Process from './components/Process';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 import CaseStudies from './components/CaseStudies';
 import Blog from './components/Blog';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -21,16 +22,24 @@ declare global {
   }
 }
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
-    if (window.AOS) {
-      window.AOS.init({
+    console.log('Initializing AOS...');
+    try {
+      AOS.init({
         duration: 800,
         once: true,
         offset: 50
       });
+      console.log('AOS initialized');
+    } catch (error) {
+      console.error('AOS initialization failed:', error);
     }
   }, [currentPage]); // Re-init AOS on page change
 
@@ -41,7 +50,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-brand-dark text-slate-200 font-sans">
-      <Navbar onNavigate={navigateTo} currentPage={currentPage} />
+      <Navbar onNavigate={navigateTo} currentPage={currentPage} />s
       
       <main>
         {currentPage === 'home' && (

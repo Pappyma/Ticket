@@ -37,12 +37,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     
+    // Helper function to perform the actual scroll
     const scrollToTarget = () => {
       const element = document.getElementById(targetId);
       if (element) {
         const headerOffset = 80;
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
     
         window.scrollTo({
           top: offsetPosition,
@@ -51,11 +52,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       }
     };
 
+    // If we are not on home, go to home first, wait for render, then scroll
     if (currentPage !== 'home') {
       onNavigate('home');
       // Allow time for Home component to mount before scrolling
       setTimeout(scrollToTarget, 100);
     } else {
+      // If already on home, just scroll
       scrollToTarget();
     }
     
@@ -66,15 +69,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const mobileNavLinkClass = "text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer";
 
   return (
-    <nav 
-      className={`fixed w-full z-50 glass-nav transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`} 
+    <nav
+      className={`fixed w-full z-50 glass-nav transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}
       id="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div 
-            className="flex-shrink-0 flex items-center gap-2 cursor-pointer" 
+          <div
+            className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
             onClick={scrollToTop}
           >
             <i className="fa-solid fa-ticket text-brand-primary text-2xl"></i>
@@ -82,15 +85,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               Ticket<span className="text-brand-primary">Zero</span>
             </span>
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className={navLinkClass}>Services</a>
               <a href="#benefits" onClick={(e) => handleNavClick(e, 'benefits')} className={navLinkClass}>Why Us</a>
               <a href="#process" onClick={(e) => handleNavClick(e, 'process')} className={navLinkClass}>Process</a>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
                 className="bg-brand-primary hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30 cursor-pointer"
               >
@@ -101,9 +104,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
 
           {/* Mobile menu button */}
           <div className="-mr-2 flex md:hidden">
-            <button 
-              type="button" 
-              onClick={toggleMobileMenu} 
+            <button
+              type="button"
+              onClick={toggleMobileMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
             >
               <i className="fa-solid fa-bars text-xl"></i>

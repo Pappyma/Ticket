@@ -7,7 +7,7 @@ const Pricing: React.FC = () => {
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -64,7 +64,7 @@ const Pricing: React.FC = () => {
   return (
     <section id="pricing" className="py-24 relative bg-brand-dark border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-brand-primary font-bold tracking-[0.2em] uppercase mb-3">
             Tailored Solutions
@@ -79,7 +79,7 @@ const Pricing: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
-            <div 
+            <div
               key={index}
               className={`relative glass-card rounded-2xl p-8 border-t-4 ${plan.accentColor} flex flex-col hover:-translate-y-2 transition-transform duration-300`}
               data-aos="fade-up"
@@ -91,7 +91,7 @@ const Pricing: React.FC = () => {
               <div className="relative z-10 flex-grow">
                 <h4 className={`text-2xl font-bold ${plan.textColor} mb-1 tracking-wide`}>{plan.name}</h4>
                 <p className="text-gray-400 text-sm font-medium mb-8 uppercase tracking-wider">{plan.subtitle}</p>
-                
+
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start text-gray-300">
@@ -103,8 +103,8 @@ const Pricing: React.FC = () => {
               </div>
 
               <div className="relative z-10 mt-auto">
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={handleScrollToContact}
                   className="block w-full text-center py-3 rounded-lg border border-gray-600 hover:border-white text-white hover:bg-gray-800 transition-all font-semibold text-sm"
                 >
