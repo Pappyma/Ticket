@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -24,8 +24,8 @@ const Hero: React.FC = () => {
       <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
-        <div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-8"
+        <div 
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-8" 
           data-aos="fade-down"
         >
           <span className="relative flex h-2 w-2">
@@ -35,37 +35,37 @@ const Hero: React.FC = () => {
           The Future of Support is Here
         </div>
 
-        <h1
-          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
-          data-aos="fade-up"
+        <h1 
+          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight" 
+          data-aos="fade-up" 
           data-aos-delay="100"
         >
           Zero Wait Times.<br />
           <span className="text-gradient">Infinite Satisfaction.</span>
         </h1>
 
-        <p
-          className="mt-4 max-w-2xl text-xl text-gray-400 mb-10"
-          data-aos="fade-up"
+        <p 
+          className="mt-4 max-w-2xl text-xl text-gray-400 mb-10" 
+          data-aos="fade-up" 
           data-aos-delay="200"
         >
           TicketZero automates your customer support with intelligent AI agents, slashing response times and boosting CSAT scores instantly.
         </p>
 
-        <div
-          className="flex flex-col sm:flex-row gap-4"
-          data-aos="fade-up"
+        <div 
+          className="flex flex-col sm:flex-row gap-4" 
+          data-aos="fade-up" 
           data-aos-delay="300"
         >
-          <a
-            href="#contact"
+          <a 
+            href="#contact" 
             onClick={(e) => handleScroll(e, 'contact')}
             className="bg-brand-primary hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/40 flex items-center justify-center gap-2 cursor-pointer"
           >
             Start Automating <i className="fa-solid fa-arrow-right"></i>
           </a>
-          <a
-            href="#services"
+          <a 
+            href="#services" 
             onClick={(e) => handleScroll(e, 'services')}
             className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full text-lg font-bold transition-all flex items-center justify-center cursor-pointer"
           >
@@ -74,9 +74,9 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Hero Image / Dashboard Mockup placeholder */}
-        <div
-          className="mt-16 relative w-full max-w-4xl animate-float"
-          data-aos="fade-up"
+        <div 
+          className="mt-16 relative w-full max-w-4xl animate-float" 
+          data-aos="fade-up" 
           data-aos-delay="500"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10 h-full w-full"></div>
