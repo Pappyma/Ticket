@@ -13,6 +13,9 @@
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Dialogflow Messenger Styles -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -101,6 +104,56 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        
+        /* Chatbot Customization (Dark Theme High Visibility) */
+        df-messenger {
+            /* Position and Z-Index */
+            z-index: 2147483647 !important;
+            position: fixed !important;
+            bottom: 24px !important;
+            right: 24px !important;
+            
+            /* Dimensions - Explicitly set to prevent collapse */
+            --df-messenger-chat-window-height: 550px;
+            --df-messenger-chat-window-width: 360px;
+            
+            /* Text & Font */
+            --df-messenger-font-color: #E2E8F0;
+            --df-messenger-font-family: 'Inter', sans-serif;
+            
+            /* Backgrounds */
+            --df-messenger-chat-background: #111827; /* brand.card */
+            
+            /* Title Bar - High Visibility Blue */
+            --df-messenger-titlebar-background: #3B82F6; /* brand.primary */
+            --df-messenger-titlebar-font-color: #FFFFFF;
+            
+            /* Messages */
+            --df-messenger-message-user-background: #3B82F6; /* brand.primary */
+            --df-messenger-message-user-font-color: #FFFFFF;
+            
+            --df-messenger-message-bot-background: #1F2937; /* Gray 800 */
+            --df-messenger-message-bot-font-color: #E2E8F0;
+            
+            /* Input Area - Light background for maximum visibility of text */
+            --df-messenger-input-background: #F8FAFC; /* Very light gray/white */
+            --df-messenger-input-font-color: #0F172A; /* Dark Slate text */
+            --df-messenger-input-placeholder-font-color: #64748B; /* Slate 500 */
+            
+            /* Inputs / Borders / Icons */
+            --df-messenger-send-icon: #3B82F6;
+            --df-messenger-minimized-chat-bubble-color: #3B82F6;
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            df-messenger {
+                bottom: 16px !important;
+                right: 16px !important;
+                --df-messenger-chat-window-width: 90vw;
+                --df-messenger-chat-window-height: 80vh;
+            }
+        }
     </style>
   <script type="importmap">
 {
@@ -117,5 +170,41 @@
     
     <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Dialogflow Messenger Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    
+    <script>
+        // Chatbot initialization
+        function initializeChat() {
+            const dfMessenger = document.querySelector('df-messenger');
+            if (dfMessenger) {
+                // Ensure z-index is correct
+                dfMessenger.style.zIndex = '2147483647';
+            }
+        }
+        
+        // Listen for the specific Dialogflow load event
+        window.addEventListener('df-messenger-loaded', function (event) {
+            const dfMessenger = document.querySelector('df-messenger');
+            // Check if we need to explicitly expand, though expand="true" attribute usually handles it.
+            // Avoid calling renderCustomCard causing glitches.
+        });
+
+        window.addEventListener('load', initializeChat);
+    </script>
+
+    <df-messenger
+      location="us-central1"
+      project-id="grounded-jetty-460322-u8"
+      agent-id="4fbb0e12-3c78-4da4-833c-4eabff6af97e"
+      language-code="en"
+      max-query-length="-1"
+      expand="true"
+      chat-title="TicketZero Assistant">
+      <df-messenger-chat-bubble
+        chat-title="TicketZero Assistant">
+      </df-messenger-chat-bubble>
+    </df-messenger>
   </body>
 </html>
