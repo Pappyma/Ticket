@@ -5,7 +5,7 @@ import Stats from './components/Stats';
 import Services from './components/Services';
 import Capabilities from './components/Capabilities';
 import WhyUs from './components/WhyUs';
-import Infrastructure from './components/Infrastructure';
+import About from './components/About';
 import Process from './components/Process';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
@@ -51,7 +51,7 @@ const App: React.FC = () => {
             <Services />
             <Capabilities />
             <WhyUs />
-            <Infrastructure />
+            <About />
             <Process />
             <Pricing />
             <Contact />
