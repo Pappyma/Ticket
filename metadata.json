@@ -1,5 +1,8 @@
 {
   "name": "TicketZero",
-  "description": "AI Customer Assistance Agency Landing Page",
-  "requestFramePermissions": []
+  "description": "AI Customer Assistance Agency Landing Page - Enterprise Grade Support Automation",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
 }
