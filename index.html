@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TicketZero | AI Customer Assistance Agency</title>
 
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css" />
 
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Dialogflow default theme -->
+    <link
+      rel="stylesheet"
+      href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
+    />
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -30,50 +39,110 @@
       };
     </script>
 
+    <!-- GLOBAL STYLES -->
     <style>
-      html, body { background-color: #0b0f19; color: #e2e8f0; min-height: 100vh; overflow-x: hidden; }
-      
-      /* Final Branded Chat Styles */
+      html,
+      body {
+        background-color: #0b0f19;
+        color: #e2e8f0;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ============================
+         Dialogflow Messenger THEME
+         (visual fix only)
+      ============================ */
       df-messenger {
         z-index: 2147483647 !important;
         position: fixed !important;
         bottom: 24px !important;
         right: 24px !important;
+
         --df-messenger-chat-window-height: 550px;
         --df-messenger-chat-window-width: 360px;
-        --df-messenger-primary-color: #3b82f6;
-        --df-messenger-chat-background: #0b1220;
-        --df-messenger-font-color: #e5e7eb;
-        --df-messenger-titlebar-background: #3b82f6;
-        --df-messenger-message-user-background: #3b82f6;
-        --df-messenger-message-bot-background: #111827;
 
-        /* TYPING AREA FIX: Forces Dark Background with White Text */
-        --df-messenger-input-background: #111827 !important;
-        --df-messenger-input-font-color: #ffffff !important; 
-        --df-messenger-input-placeholder-font-color: #94a3b8 !important;
+        /* Core theme */
+        --df-messenger-primary-color: #3b82f6;
+        --df-messenger-chat-background: #0b0f19;
+        --df-messenger-font-color: #e5e7eb;
+
+        /* Title bar */
+        --df-messenger-titlebar-background: #111827;
+        --df-messenger-titlebar-font-color: #e5e7eb;
+
+        /* Messages */
+        --df-messenger-message-user-background: #3b82f6;
+        --df-messenger-message-user-font-color: #ffffff;
+
+        --df-messenger-message-bot-background: #111827;
+        --df-messenger-message-bot-font-color: #e5e7eb;
+
+        /* INPUT FIX */
+        --df-messenger-input-box-color: #111827;
+        --df-messenger-input-font-color: #ffffff;
+        --df-messenger-input-placeholder-font-color: #94a3b8;
+
+        --df-messenger-input-box-border: 1px solid rgba(148, 163, 184, 0.25);
+        --df-messenger-input-box-border-radius: 14px;
+
+        /* Send icon */
+        --df-messenger-send-icon-color: #94a3b8;
+        --df-messenger-send-icon-color-hover: #e5e7eb;
+        --df-messenger-send-icon-color-active: #3b82f6;
       }
 
+      /* Teaser bubble */
       #tz-teaser {
-        position: fixed; right: 92px; bottom: 92px; max-width: 300px;
-        padding: 12px; border-radius: 14px; background: #ffffff; color: #111827;
-        font-size: 13px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        cursor: pointer; z-index: 2147483647; display: none; opacity: 0;
+        position: fixed;
+        right: 92px;
+        bottom: 92px;
+        max-width: 300px;
+        padding: 12px;
+        border-radius: 14px;
+        background: #ffffff;
+        color: #111827;
+        font-size: 13px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 2147483647;
+        display: none;
+        opacity: 0;
         transition: all 0.3s ease;
       }
-      #tz-teaser.show { display: block; opacity: 1; transform: translateY(0); }
+
+      #tz-teaser.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
 
+    <!-- React import map -->
     <script type="importmap">
-      { "imports": { "react": "https://aistudiocdn.com/react@^19.2.0", "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/", "react/": "https://aistudiocdn.com/react@^19.2.0/" } }
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/"
+        }
+      }
     </script>
   </head>
+
   <body class="antialiased">
     <div id="root"></div>
+
+    <!-- App -->
     <script type="module" src="/index.tsx"></script>
+
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Dialogflow Messenger -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
+    <!-- Teaser -->
     <div id="tz-teaser" onclick="document.querySelector('df-messenger-chat-bubble').openChat()">
       Curious how we resolve 85% of tickets instantly? Ask me anything!
     </div>
@@ -81,10 +150,11 @@
     <script>
       window.addEventListener("load", () => {
         const teaser = document.getElementById("tz-teaser");
-        setTimeout(() => teaser.classList.add("show"), 10000); 
+        setTimeout(() => teaser.classList.add("show"), 10000);
       });
     </script>
 
+    <!-- Messenger -->
     <df-messenger
       location="us-central1"
       project-id="grounded-jetty-460322-u8"
