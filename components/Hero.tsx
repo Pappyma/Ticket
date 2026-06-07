@@ -36,24 +36,23 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 
-          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight" 
+          className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight max-w-5xl" 
           data-aos="fade-up" 
           data-aos-delay="100"
         >
-          Zero Wait Times.<br />
-          <span className="text-gradient">Infinite Satisfaction.</span>
+          Replace Your Tier-1 Support Team with <span className="text-gradient">AI Agents</span> That Resolve 85% of Tickets—24/7
         </h1>
 
         <p 
-          className="mt-4 max-w-2xl text-xl text-gray-400 mb-10" 
+          className="mt-4 max-w-3xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed" 
           data-aos="fade-up" 
           data-aos-delay="200"
         >
-          TicketZero automates your customer support with intelligent AI agents, slashing response times and boosting CSAT scores instantly.
+          Trusted by high-growth SaaS, e-commerce, and travel brands to slash response times to <strong>0 seconds</strong>, boost CSAT by 40%+, and save $18,000/year per agent replaced. Built on Google Cloud—no hallucinations, no data leaks, just grounded, human-like support.
         </p>
 
         <div 
-          className="flex flex-col sm:flex-row gap-4" 
+          className="flex flex-col sm:flex-row gap-4 mb-16" 
           data-aos="fade-up" 
           data-aos-delay="300"
         >
@@ -62,46 +61,48 @@ const Hero: React.FC = () => {
             onClick={(e) => handleScroll(e, 'contact')}
             className="bg-brand-primary hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/40 flex items-center justify-center gap-2 cursor-pointer"
           >
-            Start Automating <i className="fa-solid fa-arrow-right"></i>
+            See a 2-Min Demo <i className="fa-solid fa-play text-sm"></i>
           </a>
           <a 
-            href="#services" 
-            onClick={(e) => handleScroll(e, 'services')}
+            href="#contact" 
+            onClick={(e) => handleScroll(e, 'contact')}
             className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full text-lg font-bold transition-all flex items-center justify-center cursor-pointer"
           >
-            Explore Services
+            Free Pilot: Automate Your Next 100 Tickets
           </a>
         </div>
 
-        {/* Hero Image / Dashboard Mockup placeholder */}
+        {/* Live Chat Demo Visual */}
         <div 
-          className="mt-16 relative w-full max-w-4xl animate-float" 
+          className="mt-8 relative w-full max-w-4xl animate-float" 
           data-aos="fade-up" 
           data-aos-delay="500"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10 h-full w-full"></div>
-          <div className="glass-card rounded-xl p-4 border border-gray-700 shadow-2xl">
-            <div className="flex gap-2 mb-4">
+          <div className="glass-card rounded-xl p-4 md:p-6 border border-gray-700 shadow-2xl">
+            <div className="flex gap-2 mb-6">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             {/* Mock Chat Interface */}
-            <div className="space-y-4 text-left font-mono text-sm">
+            <div className="space-y-6 text-left font-sans text-sm md:text-base">
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
-                  <i className="fa-solid fa-user"></i>
+                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center flex-shrink-0">
+                  <i className="fa-solid fa-user text-gray-300"></i>
                 </div>
-                <div className="bg-gray-800 p-3 rounded-lg rounded-tl-none max-w-md text-gray-300">
+                <div className="bg-gray-800/80 p-4 rounded-2xl rounded-tl-none max-w-md text-gray-200 border border-gray-700 shadow-sm">
                   My order #4922 hasn't arrived yet. Can you help?
                 </div>
               </div>
               <div className="flex gap-3 flex-row-reverse">
-                <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0">
                   <i className="fa-solid fa-robot text-white"></i>
                 </div>
-                <div className="bg-blue-900/40 border border-blue-500/30 p-3 rounded-lg rounded-tr-none max-w-md text-blue-100">
-                  <span className="text-xs text-blue-400 block mb-1">TicketZero Agent • Instantly</span>
+                <div className="bg-blue-900/40 border border-blue-500/30 p-4 rounded-2xl rounded-tr-none max-w-md text-blue-50 shadow-inner">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">TicketZero Agent • Instantly</span>
+                  </div>
                   Hello! I've checked order #4922. It is currently out for delivery and should arrive by 5:00 PM today. Would you like the tracking link?
                 </div>
               </div>
