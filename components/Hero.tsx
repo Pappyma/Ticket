@@ -16,6 +16,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  // Opens the existing Dialogflow df-messenger widget embedded in index.html
+  // (the same one behind the bottom-right "Ask me anything!" bubble).
+  const openChatAgent = () => {
+    const bubble = document.querySelector('df-messenger-chat-bubble') as
+      | (HTMLElement & { openChat?: () => void })
+      | null;
+    bubble?.openChat?.();
+  };
+
   return (
     <div className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Blobs */}
@@ -63,13 +72,20 @@ const Hero: React.FC = () => {
           >
             See a 2-Min Demo <i className="fa-solid fa-play text-sm"></i>
           </a>
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             onClick={(e) => handleScroll(e, 'contact')}
             className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full text-lg font-bold transition-all flex items-center justify-center cursor-pointer"
           >
             Free Pilot: Automate Your Next 100 Tickets
           </a>
+          <button
+            type="button"
+            onClick={openChatAgent}
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-purple-500/40 flex items-center justify-center gap-2 cursor-pointer"
+          >
+            Try the AI Agent <i className="fa-solid fa-robot text-sm"></i>
+          </button>
         </div>
 
         {/* Live Chat Demo Visual */}
