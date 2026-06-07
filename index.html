@@ -94,8 +94,14 @@
         --df-messenger-message-bot-background: #111827;
         --df-messenger-message-bot-font-color: #e5e7eb;
 
-        /* INPUT FIX */
-        --df-messenger-input-box-color: #111827;
+        /* INPUT FIX — keep typed text readable on a dark input box.
+           NOTE: the live build (fast/df-messenger v1) uses
+           --df-messenger-input-background (outer area) and
+           --df-messenger-input-box-background (the box around the textarea);
+           the old --df-messenger-input-box-color is not a real variable in
+           this build, so the box stayed white and white text was invisible. */
+        --df-messenger-input-background: #0b0f19;
+        --df-messenger-input-box-background: #1f2937;
         --df-messenger-input-font-color: #ffffff;
         --df-messenger-input-placeholder-font-color: #94a3b8;
 
