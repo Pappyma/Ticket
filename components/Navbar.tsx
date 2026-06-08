@@ -62,6 +62,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
     if (isMobileMenuOpen) setIsMobileMenuOpen(false);
   };
 
+  // Navigates to a separate page/view (e.g. the blog) rather than scrolling to
+  // an in-page section.
+  const handlePageNav = (e: React.MouseEvent<HTMLAnchorElement>, page: string) => {
+    e.preventDefault();
+    onNavigate(page);
+    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+  };
+
   const navLinkClass = "text-gray-300 hover:text-brand-primary transition-all duration-300 px-3 py-2 rounded-md text-sm font-medium cursor-pointer relative group";
   const mobileNavLinkClass = "text-gray-300 hover:text-white hover:bg-gray-800/50 block px-3 py-4 rounded-md text-lg font-medium cursor-pointer border-b border-gray-800/50";
 
@@ -100,8 +108,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 Process
                 <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
               </a>
-              <a 
-                href="#contact" 
+              <a href="#blog" onClick={(e) => handlePageNav(e, 'blog')} className={navLinkClass}>
+                Blog
+                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-brand-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+              </a>
+              <a
+                href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
                 className="bg-brand-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40 cursor-pointer ml-4"
               >
@@ -129,6 +141,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className={mobileNavLinkClass}>Services</a>
           <a href="#benefits" onClick={(e) => handleNavClick(e, 'benefits')} className={mobileNavLinkClass}>Why Us</a>
           <a href="#process" onClick={(e) => handleNavClick(e, 'process')} className={mobileNavLinkClass}>Process</a>
+          <a href="#blog" onClick={(e) => handlePageNav(e, 'blog')} className={mobileNavLinkClass}>Blog</a>
           <div className="pt-8">
              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="w-full text-center bg-brand-primary text-white block px-3 py-4 rounded-xl text-lg font-bold shadow-lg shadow-blue-500/20">Book Demo</a>
           </div>
