@@ -5,4 +5,24 @@
       <lastmod>2024-11-26</lastmod>
       <priority>1.00</priority>
    </url>
+   <url>
+      <loc>https://ticketzero.world/blog/the-death-of-the-queue</loc>
+      <lastmod>2025-06-08</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://ticketzero.world/blog/llms-in-customer-support</loc>
+      <lastmod>2025-06-05</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://ticketzero.world/blog/train-your-custom-agent-in-24-hours</loc>
+      <lastmod>2025-05-30</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://ticketzero.world/blog/roi-of-automated-ticket-routing</loc>
+      <lastmod>2025-05-22</lastmod>
+      <priority>0.80</priority>
+   </url>
 </urlset>
