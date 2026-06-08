@@ -100,7 +100,7 @@ const WhyUs: React.FC = () => {
           <div className="lg:pl-8" data-aos="fade-left">
              <h4 className="text-2xl font-bold text-white mb-4">The Support Bottleneck Ends Here</h4>
              <p className="text-gray-400 mb-6 leading-relaxed">
-               Most companies scale their support by throwing people at the problem. We scale it by throwing intelligence. By automating the repetitive 85%, your human agents can finally focus on what matters: complex problem solving and white-glove service.
+               Most companies scale their support by throwing people at the problem. We scale it by throwing intelligence. By automating the repetitive majority, your human agents can finally focus on what matters: complex problem solving and white-glove service.
              </p>
              <div className="flex flex-col gap-4">
                <div className="flex items-center gap-4 text-brand-primary font-bold">

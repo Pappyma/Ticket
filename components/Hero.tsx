@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           data-aos="fade-up" 
           data-aos-delay="100"
         >
-          Replace Your Tier-1 Support Team with <span className="text-gradient">AI Agents</span> That Resolve 85% of Tickets—24/7
+          Replace Your Tier-1 Support Team with <span className="text-gradient">AI Agents</span> That Resolve Most Support Tickets Instantly — 24/7
         </h1>
 
         <p 
