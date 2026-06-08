@@ -1,41 +1,11 @@
 import React from 'react';
+import { posts } from '../content/posts';
 
-const Blog: React.FC = () => {
-  const posts = [
-    {
-      title: "The Death of the Queue: Why 0s Wait Time Matters",
-      excerpt: "In 2024, customers expect instant gratification. Here is why removing the wait time is the single biggest lever for CSAT scores.",
-      date: "Oct 12, 2023",
-      category: "Strategy",
-      readTime: "5 min read",
-      imageColor: "bg-blue-500"
-    },
-    {
-      title: "LLMs in Customer Support: Hallucination vs Reality",
-      excerpt: "How we ground our AI agents in your data to prevent made-up answers and ensure 100% factual accuracy.",
-      date: "Oct 05, 2023",
-      category: "Technology",
-      readTime: "8 min read",
-      imageColor: "bg-purple-500"
-    },
-    {
-      title: "How to Train Your Custom Agent in Under 24 Hours",
-      excerpt: "A step-by-step guide to preparing your knowledge base for ingestion by the TicketZero engine.",
-      date: "Sep 28, 2023",
-      category: "Tutorial",
-      readTime: "6 min read",
-      imageColor: "bg-pink-500"
-    },
-    {
-      title: "The ROI of Automated Ticket Routing",
-      excerpt: "Stop wasting senior agent time on password resets. Calculate the exact savings of intelligent triage.",
-      date: "Sep 15, 2023",
-      category: "Business",
-      readTime: "4 min read",
-      imageColor: "bg-green-500"
-    }
-  ];
+interface BlogProps {
+  onOpenPost: (slug: string) => void;
+}
 
+const Blog: React.FC<BlogProps> = ({ onOpenPost }) => {
   return (
     <section className="pt-32 pb-24 min-h-screen bg-brand-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -49,9 +19,19 @@ const Blog: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post, index) => (
-            <div 
-              key={index}
-              className="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-primary/50 transition-all duration-300 group hover:-translate-y-1"
+            <div
+              key={post.slug}
+              onClick={() => onOpenPost(post.slug)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onOpenPost(post.slug);
+                }
+              }}
+              role="link"
+              tabIndex={0}
+              aria-label={`Read article: ${post.title}`}
+              className="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-primary/50 transition-all duration-300 group hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-primary/60"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -66,7 +46,12 @@ const Blog: React.FC = () => {
                  <p className="text-gray-400 mb-6 flex-grow">{post.excerpt}</p>
                  <div className="flex items-center justify-between border-t border-gray-800 pt-4 mt-auto">
                     <span className="text-gray-500 text-sm">{post.date}</span>
-                    <button className="text-brand-primary font-semibold text-sm group-hover:underline">Read Article</button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenPost(post.slug); }}
+                      className="text-brand-primary font-semibold text-sm group-hover:underline inline-flex items-center gap-1.5 cursor-pointer"
+                    >
+                      Read Article <i className="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
                  </div>
               </div>
             </div>
