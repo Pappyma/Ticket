@@ -5,7 +5,7 @@ const Services: React.FC = () => {
     {
       icon: "fa-solid fa-headset",
       title: "AI Support Agents",
-      subtitle: "Resolve 85% of Tier-1 inquiries instantly—24/7.",
+      subtitle: "Resolve most Tier-1 inquiries instantly—24/7.",
       bullets: [
         "Trained on your knowledge base, PDFs, and past tickets",
         "Human-like conversations (no “press 1 for help”)",

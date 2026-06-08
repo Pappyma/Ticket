@@ -25,7 +25,7 @@ const Pricing: React.FC = () => {
       features: [
         "Up to 1,000 support tickets/month",
         "AI trained on your website + 5 PDFs",
-        "85% auto-resolution on Tier-1 inquiries",
+        "Auto-resolution of most Tier-1 inquiries",
         "100+ languages, 24/7 availability",
         "Email + chat support"
       ],

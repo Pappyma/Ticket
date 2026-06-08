@@ -10,7 +10,7 @@ const Stats: React.FC = () => {
             <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Wait Time</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="100">
-            <div className="text-4xl font-bold text-white mb-2">85%</div>
+            <div className="text-4xl font-bold text-white mb-2">Most</div>
             <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Auto-Resolution</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="200">
