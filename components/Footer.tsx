@@ -41,6 +41,15 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-gray-500 text-sm">
               Revolutionizing customer experience through intelligent automation and human-centric AI design.
             </p>
+            <a
+              href="https://wa.me/393892829798"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-[#25D366] hover:text-[#1ebe57] transition font-semibold text-sm"
+            >
+              <i className="fa-brands fa-whatsapp text-lg"></i>
+              Chat on WhatsApp
+            </a>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4">Services</h4>

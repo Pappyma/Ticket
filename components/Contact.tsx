@@ -48,6 +48,16 @@ const Contact: React.FC = () => {
             <p className="text-xl text-gray-400 mb-8">
               Book a demo to see how TicketZero can automate your workflow. We typically respond within 2 hours.
             </p>
+            <p className="text-gray-400 mb-4">Prefer to chat? Message us directly:</p>
+            <a
+              href="https://wa.me/393892829798"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold px-6 py-3 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-green-500/30"
+            >
+              <i className="fa-brands fa-whatsapp text-2xl"></i>
+              Chat on WhatsApp
+            </a>
           </div>
 
           {/* Booking Form */}
