@@ -23,7 +23,7 @@ const WhyUs: React.FC = () => {
     },
     {
       title: "Enterprise-Grade Security",
-      description: "Data is processed in private, isolated environments on Google Cloud—with SOC 2 compliance, end-to-end encryption, and strict access controls.",
+      description: "Data is processed in private, isolated environments on Google Cloud—with end-to-end encryption and strict access controls.",
       icon: "fa-shield-check",
       color: "text-green-400"
     },
@@ -48,7 +48,7 @@ const WhyUs: React.FC = () => {
   ];
 
   const trustBadges = [
-    { label: "SOC 2 Compliant", icon: "fa-lock" },
+    { label: "Strict Access Controls", icon: "fa-lock" },
     { label: "Google Cloud Infrastructure", icon: "fa-cloud" },
     { label: "GDPR & CCPA Ready", icon: "fa-earth-americas" },
     { label: "Enterprise Encryption", icon: "fa-shield-halved" }

@@ -37,7 +37,7 @@ const PrivacyPolicy: React.FC = () => {
                 <div>
                     <h3 className="text-xl font-bold text-white mb-3">4. Data Security</h3>
                     <p>
-                        We implement enterprise-grade security measures including encryption in transit and at rest. Our infrastructure is hosted on Google Cloud Platform, adhering to SOC2 compliance standards.
+                        We implement strong security measures including encryption in transit and at rest. Our infrastructure is built on Google Cloud Platform's secure, enterprise-grade infrastructure.
                     </p>
                 </div>
 
