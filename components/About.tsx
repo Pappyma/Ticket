@@ -50,13 +50,13 @@ const About: React.FC = () => {
 
             <div className="pt-6 flex flex-wrap gap-8">
               <div>
-                <div className="text-2xl font-bold text-white">0%</div>
-                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest">Hallucinations</div>
+                <div className="text-2xl font-bold text-white">Grounded</div>
+                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest">Answers</div>
               </div>
               <div className="w-px h-10 bg-gray-800"></div>
               <div>
-                <div className="text-2xl font-bold text-white">100%</div>
-                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest">Brand Aligned</div>
+                <div className="text-2xl font-bold text-white">Consistent</div>
+                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest">On-Brand</div>
               </div>
               <div className="w-px h-10 bg-gray-800"></div>
               <div>

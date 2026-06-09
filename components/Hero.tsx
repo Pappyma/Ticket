@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
           data-aos="fade-up" 
           data-aos-delay="200"
         >
-          Trusted by high-growth SaaS, e-commerce, and travel brands to slash response times to <strong>0 seconds</strong>, boost CSAT by 40%+, and save $18,000/year per agent replaced. Built on Google Cloud—no hallucinations, no data leaks, just grounded, human-like support.
+          Trusted by high-growth SaaS, e-commerce, and travel brands to slash response times to <strong>near-instant</strong>, drive higher CSAT, and deliver significant cost savings per agent replaced. Built on Google Cloud—minimized hallucinations, strong data protection, just grounded, human-like support.
         </p>
 
         <div 

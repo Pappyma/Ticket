@@ -34,7 +34,7 @@ const WhyUs: React.FC = () => {
       color: "text-brand-primary"
     },
     {
-      title: "100% Data Privacy",
+      title: "Strong Data Privacy",
       description: "Your business data is never used to train public AI models. It stays in your dedicated environment—owned by you, governed by you.",
       icon: "fa-lock-keyhole",
       color: "text-pink-400"
