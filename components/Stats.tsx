@@ -6,19 +6,19 @@ const Stats: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div data-aos="fade-up">
-            <div className="text-4xl font-bold text-brand-primary mb-2">0s</div>
-            <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Wait Time</div>
+            <div className="text-4xl font-bold text-brand-primary mb-2">Near-Instant</div>
+            <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Response Time</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="100">
             <div className="text-4xl font-bold text-white mb-2">Most</div>
             <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Auto-Resolution</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="200">
-            <div className="text-4xl font-bold text-white mb-2">100+</div>
+            <div className="text-4xl font-bold text-white mb-2">Many</div>
             <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">Languages</div>
           </div>
           <div data-aos="fade-up" data-aos-delay="300">
-            <div className="text-4xl font-bold text-brand-accent mb-2">3x</div>
+            <div className="text-4xl font-bold text-brand-accent mb-2">Strong</div>
             <div className="text-gray-400 font-semibold uppercase tracking-wider text-xs">ROI</div>
           </div>
         </div>

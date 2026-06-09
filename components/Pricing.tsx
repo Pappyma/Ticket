@@ -65,7 +65,7 @@ const Pricing: React.FC = () => {
         "Salesforce, ServiceNow, or custom API",
         "Dedicated AI agent manager",
         "Custom workflows & SLA monitoring",
-        "GDPR, HIPAA, SOC 2 compliance",
+        "GDPR & HIPAA compliance",
         "Quarterly business reviews",
         "White-glove deployment & training"
       ],
@@ -174,7 +174,7 @@ const Pricing: React.FC = () => {
                 <h5 className="text-white font-bold text-lg mb-1">Not sure which plan?</h5>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   Try our <strong className="text-brand-primary">Free Pilot</strong>: We’ll automate your next 100 tickets at no cost. 
-                  Pay only if your CSAT improves or ticket deflection hits 70%.
+                  Pay only if your CSAT improves or you see meaningful ticket deflection.
                 </p>
                 <a 
                   href="#contact" 

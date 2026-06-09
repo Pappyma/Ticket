@@ -2,27 +2,25 @@
 import React from 'react';
 
 const Testimonials: React.FC = () => {
+  // Illustrative example scenarios — NOT real customer quotes or named people.
   const reviews = [
     {
-      name: "Sarah Jenkins",
-      role: "VP of Operations, CloudStream",
-      content: "TicketZero completely transformed our support desk. We went from a 4-hour response time to instantaneous resolution. Our CSAT scores jumped from 3.8 to 4.9 in just two months.",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-      rating: 5
+      name: "High-Volume SaaS Support",
+      role: "Illustrative scenario",
+      content: "A SaaS team facing a surge in tickets could shift from slow, queued replies to near-instant resolution on routine questions—lifting customer satisfaction without adding headcount.",
+      avatar: "https://api.dicebear.com/7.x/shapes/svg?seed=SaaS"
     },
     {
-      name: "Marcus Thorne",
-      role: "Founder, LuxeCart E-commerce",
-      content: "As a boutique brand, we were worried AI would feel cold. TicketZero's agents are surprisingly human. They handle returns and tracking queries with such grace that customers don't even realize they're talking to a bot.",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
-      rating: 5
+      name: "Boutique E-commerce Brand",
+      role: "Illustrative scenario",
+      content: "A smaller brand worried that AI would feel impersonal could deploy agents that handle returns and order-tracking questions conversationally, so customers get quick, human-like help.",
+      avatar: "https://api.dicebear.com/7.x/shapes/svg?seed=Ecommerce"
     },
     {
-      name: "Elena Rodriguez",
-      role: "Head of Support, Finly App",
-      content: "The multilingual support is the killer feature. We launched in Brazil and Japan simultaneously without hiring a single new agent. TicketZero handled everything flawlessly in their native languages.",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena",
-      rating: 5
+      name: "Multilingual Product Launch",
+      role: "Illustrative scenario",
+      content: "A company launching in new regions could offer support in customers' native languages from day one—without standing up a separate team for each market.",
+      avatar: "https://api.dicebear.com/7.x/shapes/svg?seed=Global"
     }
   ];
 
@@ -32,9 +30,9 @@ const Testimonials: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-brand-primary font-bold tracking-[0.2em] uppercase mb-3 text-sm">Customer Stories</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Trusted by High-Growth Teams</h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">Don't just take our word for it. Here's how TicketZero is impacting real businesses.</p>
+          <h2 className="text-brand-primary font-bold tracking-[0.2em] uppercase mb-3 text-sm">Illustrative Scenarios</h2>
+          <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">How Different Teams Could Use TicketZero</h3>
+          <p className="text-gray-400 max-w-2xl mx-auto">Illustrative examples of how different teams might use TicketZero—not real customer quotes.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -45,13 +43,11 @@ const Testimonials: React.FC = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="flex gap-1 mb-4 text-yellow-500 text-sm">
-                {[...Array(review.rating)].map((_, i) => (
-                  <i key={i} className="fa-solid fa-star"></i>
-                ))}
+              <div className="flex items-center gap-2 mb-4 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                <i className="fa-solid fa-lightbulb"></i> Example
               </div>
-              <p className="text-gray-300 italic mb-8 flex-grow leading-relaxed">
-                "{review.content}"
+              <p className="text-gray-300 mb-8 flex-grow leading-relaxed">
+                {review.content}
               </p>
               <div className="flex items-center gap-4 border-t border-gray-800 pt-6">
                 <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full bg-gray-700 border border-gray-600" />
