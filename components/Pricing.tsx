@@ -65,7 +65,7 @@ const Pricing: React.FC = () => {
         "Salesforce, ServiceNow, or custom API",
         "Dedicated AI agent manager",
         "Custom workflows & SLA monitoring",
-        "GDPR & HIPAA compliance",
+        "Built with data-privacy best practices in mind",
         "Quarterly business reviews",
         "White-glove deployment & training"
       ],
@@ -161,7 +161,7 @@ const Pricing: React.FC = () => {
               <div>
                 <h5 className="text-white font-bold text-lg mb-1">All plans include:</h5>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Enterprise-grade Google Cloud infrastructure, 100% data privacy, grounded answers, and 24/7 monitoring.
+                  Enterprise-grade Google Cloud infrastructure, strong data privacy, grounded answers, and 24/7 monitoring.
                 </p>
               </div>
             </div>
