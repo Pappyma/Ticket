@@ -23,7 +23,7 @@ const Services: React.FC = () => {
       bullets: [
         "AI analyzes intent, sentiment, and urgency",
         "Auto-tags, prioritizes, and assigns to agents or workflows",
-        "Reduces misrouted tickets by 70%",
+        "Dramatically reduces misrouted tickets",
         "Seamless sync with Zendesk, Freshdesk, Salesforce"
       ],
       bgClass: "bg-purple-900/30",
@@ -38,7 +38,7 @@ const Services: React.FC = () => {
         "Embeddable in web, mobile, or checkout flows",
         "Helps with onboarding, troubleshooting, and cart recovery",
         "Captures qualified leads: “Can I get your email to send details?”",
-        "Reduces inbound tickets by 30–50%"
+        "Significantly reduces inbound ticket volume"
       ],
       bgClass: "bg-green-900/30",
       hoverBgClass: "group-hover:bg-brand-success",
@@ -100,7 +100,7 @@ const Services: React.FC = () => {
             We Don’t Build Chatbots. <br className="hidden md:block"/> We Deploy Your <span className="text-gradient">AI Support Workforce.</span>
           </h3>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            Unlike rule-based bots that frustrate customers, TicketZero’s agents are intelligent, stateful, and trained on your business—so they resolve real issues, not just deflect them. All agents run on <strong className="text-gray-200">Google Cloud’s enterprise AI infrastructure</strong>, ensuring military-grade security, zero hallucinations, and full data privacy.
+            Unlike rule-based bots that frustrate customers, TicketZero’s agents are intelligent, stateful, and trained on your business—so they resolve real issues, not just deflect them. All agents run on <strong className="text-gray-200">Google Cloud’s enterprise AI infrastructure</strong>, ensuring military-grade security, grounded answers, and full data privacy.
           </p>
         </div>
 
