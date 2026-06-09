@@ -1,32 +1,33 @@
 import React from 'react';
 
 const CaseStudies: React.FC = () => {
+  // Illustrative, hypothetical examples — NOT real named clients or measured results.
   const studies = [
     {
-      company: "TechFlow",
+      company: "Example: SaaS Platform",
       industry: "SaaS",
-      metric: "98%",
-      metricLabel: "Reduction in First Response Time",
-      title: "Scaling support from 500 to 50,000 users without hiring",
-      description: "TechFlow faced a massive surge in users after their Series B. With TicketZero, they automated 82% of incoming tickets, allowing their core team to focus on enterprise clients.",
+      metric: "Faster",
+      metricLabel: "First-Response Times",
+      title: "Scaling support without scaling the team",
+      description: "For example, a fast-growing SaaS platform facing a surge in signups could automate a large share of routine Tier-1 tickets—freeing its core team to focus on complex, high-value accounts.",
       tags: ["Automation", "Scale", "SaaS"]
     },
     {
-      company: "Velour & Co.",
+      company: "Example: Global E-commerce Brand",
       industry: "E-Commerce",
       metric: "24/7",
-      metricLabel: "Coverage across 12 Timezones",
-      title: "Global support in 40+ languages instantly",
-      description: "Velour needed to support customers in Europe and Asia. TicketZero's translation engine allowed their US-based team to oversee a global operation seamlessly.",
+      metricLabel: "Always-On Coverage",
+      title: "Around-the-clock support in many languages",
+      description: "A retailer expanding into new regions could use AI translation to help customers in their own languages and time zones—overseen by a single team, without hiring separately for each market.",
       tags: ["Localization", "E-Commerce", "CX"]
     },
     {
-      company: "FinGuard",
+      company: "Example: FinTech Company",
       industry: "FinTech",
-      metric: "Zero",
-      metricLabel: "Security Breaches",
+      metric: "Secure",
+      metricLabel: "Private Cloud Deployment",
       title: "Enterprise-grade security for sensitive data",
-      description: "Handling sensitive financial data requires perfection. TicketZero's private cloud deployment ensured 100% compliance while improving user trust.",
+      description: "A company handling sensitive financial data could keep it in a private, isolated cloud environment with encryption and strict access controls—protecting customers while building trust.",
       tags: ["Security", "FinTech", "Compliance"]
     }
   ];
@@ -39,10 +40,10 @@ const CaseStudies: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-brand-primary font-bold tracking-widest uppercase mb-3">Success Stories</h2>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Proven Results</h1>
+          <h2 className="text-brand-primary font-bold tracking-widest uppercase mb-3">Example Outcomes</h2>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">What's Possible with TicketZero</h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            See how forward-thinking companies are revolutionizing their customer experience with TicketZero.
+            Illustrative examples of the kinds of outcomes TicketZero is designed to deliver. These are hypothetical scenarios for illustration—not specific named clients or measured results.
           </p>
         </div>
 
