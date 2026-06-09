@@ -75,8 +75,11 @@
         bottom: 24px !important;
         right: 24px !important;
 
-        --df-messenger-chat-window-height: 550px;
-        --df-messenger-chat-window-width: 360px;
+        /* Desktop: a contained chat panel anchored bottom-right. Height is
+           capped to the viewport minus room for the fixed top navbar, so the
+           panel never overlaps the nav on shorter screens. */
+        --df-messenger-chat-window-width: 380px;
+        --df-messenger-chat-window-height: min(600px, calc(100vh - 240px));
 
         /* Core theme */
         --df-messenger-primary-color: #3b82f6;
@@ -112,6 +115,17 @@
         --df-messenger-send-icon-color: #94a3b8;
         --df-messenger-send-icon-color-hover: #e5e7eb;
         --df-messenger-send-icon-color-active: #3b82f6;
+      }
+
+      /* Mobile: fit the chat panel within the viewport, below the header,
+         with the message area and input fully visible (no overflow). */
+      @media (max-width: 480px) {
+        df-messenger {
+          right: 8px !important;
+          bottom: 8px !important;
+          --df-messenger-chat-window-width: calc(100vw - 16px);
+          --df-messenger-chat-window-height: calc(100vh - 200px);
+        }
       }
 
       /* Teaser bubble */
