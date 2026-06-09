@@ -50,7 +50,7 @@ const WhyUs: React.FC = () => {
   const trustBadges = [
     { label: "Strict Access Controls", icon: "fa-lock" },
     { label: "Google Cloud Infrastructure", icon: "fa-cloud" },
-    { label: "GDPR & CCPA Ready", icon: "fa-earth-americas" },
+    { label: "Privacy by Design", icon: "fa-earth-americas" },
     { label: "Enterprise Encryption", icon: "fa-shield-halved" }
   ];
 

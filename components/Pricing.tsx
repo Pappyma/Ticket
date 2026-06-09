@@ -65,7 +65,7 @@ const Pricing: React.FC = () => {
         "Salesforce, ServiceNow, or custom API",
         "Dedicated AI agent manager",
         "Custom workflows & SLA monitoring",
-        "GDPR & HIPAA compliance",
+        "Built with data-privacy best practices in mind",
         "Quarterly business reviews",
         "White-glove deployment & training"
       ],
