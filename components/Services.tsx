@@ -100,7 +100,7 @@ const Services: React.FC = () => {
             We Don’t Build Chatbots. <br className="hidden md:block"/> We Deploy Your <span className="text-gradient">AI Support Workforce.</span>
           </h3>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            Unlike rule-based bots that frustrate customers, TicketZero’s agents are intelligent, stateful, and trained on your business—so they resolve real issues, not just deflect them. All agents run on <strong className="text-gray-200">Google Cloud’s enterprise AI infrastructure</strong>, ensuring military-grade security, grounded answers, and full data privacy.
+            Unlike rule-based bots that frustrate customers, TicketZero’s agents are intelligent, stateful, and trained on your business—so they resolve real issues, not just deflect them. All agents run on <strong className="text-gray-200">Google Cloud’s enterprise AI infrastructure</strong>, ensuring strong security, grounded answers, and full data privacy.
           </p>
         </div>
 
